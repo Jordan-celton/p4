@@ -155,12 +155,25 @@ header {
 }
 
 .card-heart {
-  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   width: 22px;
   height: 21px;
+}
+.card-heart i {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.my-heart-full {
+  opacity: 0;
+  transition: 400ms;
+}
+.my-heart-full:hover {
+  opacity: 1;
+  color: #9356dc;
 }
 
 footer {

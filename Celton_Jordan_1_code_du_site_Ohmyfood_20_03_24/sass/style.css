@@ -42,13 +42,15 @@ header {
   background-color: #f6f6f6;
   height: 240px;
   width: 100%;
-  padding: 30px 0;
 }
 .search h2 {
-  width: 275px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
   height: 68px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 40px;
 }
 .search p {
   color: rgb(53, 53, 53);
@@ -204,4 +206,71 @@ footer .contain {
   display: flex;
   gap: 10px;
   flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 1.5rem;
+  }
+  .search {
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  .search h2 {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+  }
+  .search p {
+    padding-left: 0;
+  }
+  .button {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .fonction {
+    padding: 20px;
+  }
+  .number-list {
+    position: static;
+    margin-top: 10px;
+  }
+  .food {
+    padding: 30px 10px;
+  }
+  .card img {
+    height: 150px;
+  }
+  .card-heart {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .search {
+    padding: 20px 0 10px 0;
+  }
+  .search h2 {
+    font-size: 36px;
+  }
+  .search p {
+    font-size: 20px;
+  }
+  .button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 20px;
+  }
+  .fonction {
+    padding: 30px;
+  }
+  .fonction-list {
+    display: flex;
+    flex-direction: row;
+  }
+  .card {
+    padding: 30px;
+  }
 }/*# sourceMappingURL=style.css.map */

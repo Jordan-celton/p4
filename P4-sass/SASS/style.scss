@@ -35,20 +35,21 @@ header {
 }
 
 .search {
+  padding: 20px 20px 50px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f6f6f6;
   height: 240px;
-  width: 100%;
-  padding: 30px 0;
 }
-.search h2 {
-  width: 275px;
+.search h1 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
   height: 68px;
   font-weight: 700;
-  font-size: 24px;
 }
 .search p {
   color: rgb(53, 53, 53);
@@ -56,8 +57,9 @@ header {
   padding-left: 35px;
 }
 
-button {
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+.button {
+  text-align: center;
+  background: linear-gradient(357deg, #9356dc -11.44%, #ff79da 123.93%);
   box-shadow: 1px 11px 14px 0px rgba(130, 130, 130, 0.38);
   padding: 20px;
   color: #fff;
@@ -66,14 +68,28 @@ button {
   border-radius: 50px;
   border: none;
   width: 218px;
+  transition: 400ms;
+}
+.button:hover {
+  opacity: 0.85;
+  box-shadow: 0 15px 25px 0px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(357deg, #9356dc -11.44%, #ff79da 123.93%);
+}
+
+.fonction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .fonction {
   padding: 20px 20px 50px 20px;
 }
 .fonction .list {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 16px;
   display: flex;
-  flex-direction: column;
   gap: 25px;
   list-style: none;
   background-color: rgb(246, 246, 246);
@@ -108,13 +124,11 @@ button {
 
 .food {
   background-color: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  padding: 50px 20px;
-  gap: 20px;
+  padding: 2rem 1rem;
 }
 
 .card {
+  position: relative;
   background-color: #ffffff;
   width: 100%;
   border-radius: 20px;
@@ -125,29 +139,64 @@ button {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 231px;
+  height: 170px;
   border-radius: 20px 20px 0 0;
 }
-.card .text {
-  padding-left: 15px;
+.card h4, .card p {
+  margin: 0;
+  padding: 0;
+}
+
+.card-text {
+  padding-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
 }
 
 .card-heart {
-  display: flex;
-  justify-content: flex-end;
-}
-.card-heart i {
-  margin-top: -50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   width: 22px;
   height: 21px;
-  margin-right: 20px;
+}
+.card-heart i {
+  position: absolute;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.card-new {
+  display: flex;
+  width: 80px;
+  height: 29px;
+  background-color: #99e2d0;
+  color: #008766;
+  border-radius: 2px;
+  padding: 6px 12px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-heart-full {
+  opacity: 0;
+  transition: 400ms;
+}
+.my-heart-full:hover {
+  opacity: 1;
+  color: #9356dc;
 }
 
 footer {
   background: rgb(53, 53, 53);
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: 22px 25px;
 }
 footer h3 {
@@ -171,4 +220,72 @@ footer .contain {
   display: flex;
   gap: 10px;
   flex-direction: column;
-}/*# sourceMappingURL=.css.map */
+}
+
+@media screen and (min-width: 768px) {
+  .search {
+    padding: 20px 0 10px 0;
+  }
+  .search h1 {
+    font-size: 36px;
+  }
+  .search p {
+    font-size: 20px;
+  }
+  .button {
+    display: flex;
+    height: 50px;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .fonction {
+    padding: 50px 180px 50px 180px;
+  }
+  .fonction-contain {
+    max-width: 1440px;
+    margin: auto;
+  }
+  .fonction-list {
+    gap: 25px;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .fonction-list li {
+    width: 335px;
+  }
+  .food {
+    padding: 0 180px 30px 180px;
+  }
+  .food-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: auto;
+    justify-content: space-around;
+    gap: 28px;
+  }
+  .food-card h2 {
+    width: 100%;
+  }
+  .card {
+    width: 490px;
+    height: 251px;
+    display: flex;
+    flex-direction: column;
+  }
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 18px;
+  }
+  .footer_contain {
+    display: flex;
+    gap: 20px;
+  }
+}

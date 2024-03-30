@@ -1,0 +1,173 @@
+body {
+    font-family: "Roboto";
+    margin: 0;
+  }
+  .main-container {
+    width: 100%;
+  }
+  
+  header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 30px; 
+  }
+  
+  .logo {
+    margin: auto;
+    img{
+        width: 197px;
+    }
+  }
+  
+  .fa-arrow-left {
+    margin-right: auto;
+    font-size: 30px;
+  }
+  
+.main-image{
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+}
+.main-contain{
+  background-color: #f6f6f6;
+}
+.title{
+  padding: 20px;
+  display: flex;
+  font-family: "Shrikhand";
+  font-style: italic;
+  align-items: center;
+  gap: 30px;
+}
+.card-heart {
+  width: 22px;
+  height: 21px;
+  i{
+    position: absolute;
+    cursor: pointer;
+    font-size: 25px;
+    
+  }
+} 
+.my-heart-full{
+opacity: 0;
+transition: 400ms;
+&:hover{
+  opacity: 1;
+  color: #9356dc;
+}
+}
+.main-contain{
+    padding: 10px;
+    margin-top: -4rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #f6f6f6;
+    z-index: 1;
+    position: relative;
+  h2{
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 16px;
+  }
+  article{
+    padding: 10px;
+    gap: 5px;
+    display: flex;
+    height: 50px;
+    box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    // j'ai utilisé des pixels car meilleur rendu 
+    background: rgb(255, 255, 255);
+    flex-direction: column;
+    h3, p{
+      margin: 0;
+    }
+    .euro{
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      bottom: 20px;
+    }
+  }
+}
+.food{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.food-2{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.food-3{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+
+.button{
+    text-align: center;
+    background: linear-gradient(357deg, #9356dc -11.44%, #ff79da 123.93%);
+    box-shadow: 1px 11px 14px 0px rgba(130, 130, 130, 0.38);
+    padding: 20px;
+    color: #fff;
+    font-family: "Roboto";
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    width: 218px;
+    margin: 20px;
+    transition: 400ms;
+    // pour que l'effet soit inversé au survol 
+    &:hover{
+        opacity: 0.85;
+        box-shadow: 0 15px 25px 0px rgba(0, 0, 0, 0.6); 
+        // ombre plus portée au survol
+      }
+  }
+}
+  footer {
+    background: rgba(53, 53, 53, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 22px 25px;
+    h3 {
+        font-style: italic;
+        color: white;
+        font-family: "Shrikhand";
+        font-weight: 400;
+      }
+    a {
+        display: flex;
+        color: white;
+        text-decoration: none;
+        align-items: center;
+        gap: 20px;
+      }
+      i {
+        width: 11px;
+        height: 13px;
+      }
+      .contain {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+      }  
+  }
+  @media screen and (min-width: 768px){
+    .title{
+      display: flex;
+    }
+    .main-contain{
+      width: 1055px;
+    }
+  }
+
+

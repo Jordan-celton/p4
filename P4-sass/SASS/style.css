@@ -203,7 +203,10 @@ header {
 
 .my-heart-full:hover {
   opacity: 1;
-  color: #9356dc;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 
 footer {

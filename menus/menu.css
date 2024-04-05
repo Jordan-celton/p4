@@ -1,5 +1,13 @@
+@keyframes appaer {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 body {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   margin: 0;
 }
 
@@ -37,7 +45,7 @@ header {
 .title {
   padding: 20px;
   display: flex;
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", sans-serif;
   font-style: italic;
   align-items: center;
   gap: 30px;
@@ -70,13 +78,13 @@ header {
   margin-right: auto;
   padding: 10px;
   margin-top: -4rem;
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 15px 15px 0 0;
   background-color: #f6f6f6;
   z-index: 1;
   position: relative;
 }
 .main-contain h2 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 16px;
   border-bottom: solid 3px #99E2D0;
@@ -88,14 +96,19 @@ header {
   display: flex;
   align-items: center;
   overflow: hidden;
-  box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   background: rgb(255, 255, 255);
+  animation: appaer 1s;
 }
 .main-contain article h3, .main-contain article p {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .main-contain .selection-text {
+  overflow: hidden;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -109,7 +122,6 @@ header {
   margin-right: -25px;
   transition: all 0.5s;
 }
-
 .fa-check:before {
   content: "\f00c";
   background: white;
@@ -133,19 +145,7 @@ header {
   cursor: pointer;
 }
 
-.food {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.food-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.food-3 {
+.food, .food-2, .food-3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -157,11 +157,11 @@ header {
 }
 .btn .button {
   text-align: center;
-  background: linear-gradient(357deg, #9356dc -11.44%, #ff79da 123.93%);
+  background: linear-gradient(357deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 1px 11px 14px 0px rgba(130, 130, 130, 0.38);
   padding: 20px;
   color: #fff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   border-radius: 50px;
   border: none;
@@ -183,7 +183,7 @@ footer {
 footer h3 {
   font-style: italic;
   color: white;
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", sans-serif;
   font-weight: 400;
 }
 footer a {
@@ -213,15 +213,7 @@ footer .contain {
     flex-direction: column;
     align-items: center;
   }
-  .food {
-    display: flex;
-    width: 70%;
-  }
-  .food-2 {
-    display: flex;
-    width: 70%;
-  }
-  .food-3 {
+  .food, .food-2, .food-3 {
     display: flex;
     width: 70%;
   }

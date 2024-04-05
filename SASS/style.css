@@ -1,6 +1,52 @@
+@keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes loader2 {
+  100% {
+    transform: translateY(-30px);
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+}
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background-color: #f6f6f6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+  opacity: 0.9;
+  animation: loader 200ms 3s forwards;
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #99E2D0;
+  margin: 0 15px;
+  animation: loader2 infinite 0.3s alternate;
+}
+
+.d2 {
+  animation-delay: 0.05s;
+  background: #FF79DA;
+}
+
+.d3 {
+  animation-delay: 0.1s;
+  background: #9356DC;
 }
 
 .main-container {
@@ -73,6 +119,11 @@ header {
   border: none;
   width: 218px;
   transition: 400ms;
+}
+.button:hover {
+  opacity: 0.85;
+  box-shadow: 0 15px 25px 0px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(357deg, #9356DC -11.44%, #FF79DA 123.93%);
 }
 
 .button:hover {

@@ -1,111 +1,164 @@
-body {
-    font-family: "Roboto";
-    margin: 0;
+$primary-color: #9356DC;
+$secondary-color: #FF79DA; 
+$tierce-color: #99E2D0; 
+
+$font-family: "Roboto", sans-serif; 
+$title-font: "Shrikhand", sans-serif; 
+
+$border-radius: 15px; 
+$box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+
+@mixin button-style {
+  text-align: center;
+  background: linear-gradient(357deg, $primary-color -11.44%, $secondary-color 123.93%);
+  box-shadow: 1px 11px 14px 0px rgba(130, 130, 130, 0.38);
+  padding: 20px;
+  color: #fff;
+  font-family: $font-family;
+  text-decoration: none;
+  border-radius: 50px;
+  border: none;
+  width: 218px;
+  margin: 20px;
+  transition: 400ms;
+
+  &:hover {
+    opacity: 0.85;
+    box-shadow: 0 15px 25px 0px rgba(0, 0, 0, 0.6);
   }
-  .main-container {
-    width: 100%;
-  }
-  
-  header {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    gap: 30px; 
-  }
-  
-  .logo {
-    margin: auto;
-    img{
-        width: 197px;
-    }
-  }
-  
-  .fa-arrow-left {
-    margin-right: auto;
-    font-size: 30px;
-  }
-  
-.main-image{
-    width: 100%;
-    height: 275px;
-    object-fit: cover;
 }
 
-.title{
+@keyframes appaer {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+body {
+  font-family: $font-family;
+  margin: 0;
+}
+
+.main-container {
+  width: 100%;
+}
+
+header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  margin: auto;
+
+  img {
+    width: 197px;
+  }
+}
+
+.fa-arrow-left {
+  margin-right: auto;
+  font-size: 30px;
+}
+
+.main-image {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+}
+
+.title {
   padding: 20px;
   display: flex;
-  font-family: "Shrikhand";
+  font-family: $title-font;
   font-style: italic;
   align-items: center;
   gap: 30px;
 }
+
 .card-heart {
   width: 22px;
   height: 21px;
-  i{
+
+  i {
     position: absolute;
     cursor: pointer;
     font-size: 25px;
-    
   }
-} 
-.my-heart-full{
-opacity: 0;
-transition: 400ms;
-&:hover{
+}
+
+.my-heart-full {
+  opacity: 0;
+  transition: 400ms;
+
+  &:hover {
     opacity: 1;
-    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
     color: transparent;
     background-clip: text;
+  }
 }
-}
-.main-contain{
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    margin-top: -4rem;
-    border-radius: 2rem 2rem 0 0;
-    background-color: #f6f6f6;
-    z-index: 1;
-    position: relative;
-  h2{
-    font-family: 'Roboto';
+
+.main-contain {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  margin-top: -4rem;
+  border-radius: $border-radius $border-radius 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+
+  h2 {
+    font-family: $font-family;
     font-weight: 300;
     font-size: 16px;
-    border-bottom: solid 3px #99E2D0;
+    border-bottom: solid 3px $tierce-color;
     width: 40px;
     padding-bottom: 5px;
   }
-  article{
+
+  article {
     gap: 10px;
     display: flex;
     align-items: center;
     overflow: hidden;
-    box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    // j'ai utilisé des pixels car meilleur rendu 
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
     background: rgb(255, 255, 255);
-    h3, p{
+    animation: appaer 1s;
+    h3, p {
       margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
-  }
-.selection-text{
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-    }
-    .euro{
-      margin-left: auto;
-      font-weight: bold;
-    }
-  }
-  .fa-check{
-    margin-right: -25px;
-    transition: all 0.5s;
   }
 
-  .fa-check:before {
+  .selection-text {
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .euro {
+    margin-left: auto;
+    font-weight: bold;
+  }
+}
+
+.fa-check {
+  margin-right: -25px;
+  transition: all 0.5s;
+
+  &:before {
     content: "\f00c";
     background: white;
     border-radius: 50%;
@@ -114,117 +167,93 @@ transition: 400ms;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #99E2D0;
-}
-
-  .selection:hover .fa-check{
-    background: #99E2D0;
-    width: 59px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0px;
-    height: 62px;
-    cursor: pointer;
+    color: $tierce-color;
   }
+}
 
-.food{
+.selection:hover .fa-check {
+  background: $tierce-color;
+  width: 59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+  height: 62px;
+  cursor: pointer;
+}
+
+.food, .food-2, .food-3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.food-2{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.food-3{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.btn{
+
+.btn {
   display: flex;
   justify-content: center;
 
-.button{
-    text-align: center;
-    background: linear-gradient(357deg, #9356dc -11.44%, #ff79da 123.93%);
-    box-shadow: 1px 11px 14px 0px rgba(130, 130, 130, 0.38);
-    padding: 20px;
-    color: #fff;
-    font-family: "Roboto";
-    text-decoration: none;
-    border-radius: 50px;
-    border: none;
-    width: 218px;
-    margin: 20px;
-    transition: 400ms;
-    // pour que l'effet soit inversé au survol 
-    &:hover{
-        opacity: 0.85;
-        box-shadow: 0 15px 25px 0px rgba(0, 0, 0, 0.6); 
-        // ombre plus portée au survol
-      }
+  .button {
+    @include button-style;
   }
 }
-  footer {
-    background: rgba(53, 53, 53, 1);
+
+footer {
+  background: rgba(53, 53, 53, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 22px 25px;
+
+  h3 {
+    font-style: italic;
+    color: white;
+    font-family: $title-font;
+    font-weight: 400;
+  }
+
+  a {
     display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    gap: 20px;
+  }
+
+  i {
+    width: 11px;
+    height: 13px;
+  }
+
+  .contain {
+    display: flex;
+    gap: 10px;
     flex-direction: column;
-    padding: 22px 25px;
-    h3 {
-        font-style: italic;
-        color: white;
-        font-family: "Shrikhand";
-        font-weight: 400;
-      }
-    a {
-        display: flex;
-        color: white;
-        text-decoration: none;
-        align-items: center;
-        gap: 20px;
-      }
-      i {
-        width: 11px;
-        height: 13px;
-      }
-      .contain {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-      }  
   }
-  @media screen and (min-width: 768px){
-    .title{
-      display: flex;
-    }
-    .main-contain{
-      display: flex;
-      width: 1055px;
-      flex-direction: column;
-      align-items: center;
-    }
-    .food{
-      display: flex;
-      width: 70%;
-    }
-    .food-2{
-      display: flex;
-      width: 70%;
-    }
-    .food-3{
-      display: flex;
-      width: 70%;
-    }
-  
-    footer{
-      display: flex;
-      gap: 20px;
-      flex-direction: row-reverse;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    display: flex;
   }
-  .footer_contain{
+
+  .main-contain {
+    display: flex;
+    width: 1055px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food, .food-2, .food-3 {
+    display: flex;
+    width: 70%;
+  }
+
+  footer {
+    display: flex;
+    gap: 20px;
+    flex-direction: row-reverse;
+  }
+
+  .footer_contain {
     display: flex;
     flex-direction: row-reverse;
     gap: 15px;

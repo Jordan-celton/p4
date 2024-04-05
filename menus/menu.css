@@ -79,25 +79,58 @@ header {
   font-family: "Roboto";
   font-weight: 300;
   font-size: 16px;
+  border-bottom: solid 3px #99E2D0;
+  width: 40px;
+  padding-bottom: 5px;
 }
 .main-contain article {
-  padding: 10px;
-  gap: 5px;
+  gap: 10px;
   display: flex;
-  height: 50px;
+  align-items: center;
+  overflow: hidden;
   box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   background: rgb(255, 255, 255);
-  flex-direction: column;
 }
 .main-contain article h3, .main-contain article p {
   margin: 0;
 }
-.main-contain article .euro {
-  position: relative;
+.main-contain .selection-text {
+  padding: 10px;
   display: flex;
-  justify-content: flex-end;
-  bottom: 20px;
+  flex-direction: column;
+}
+.main-contain .euro {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.fa-check {
+  margin-right: -25px;
+  transition: all 0.5s;
+}
+
+.fa-check:before {
+  content: "\f00c";
+  background: white;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #99E2D0;
+}
+
+.selection:hover .fa-check {
+  background: #99E2D0;
+  width: 59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+  height: 62px;
+  cursor: pointer;
 }
 
 .food {
@@ -175,7 +208,22 @@ footer .contain {
     display: flex;
   }
   .main-contain {
+    display: flex;
     width: 1055px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .food {
+    display: flex;
+    width: 70%;
+  }
+  .food-2 {
+    display: flex;
+    width: 70%;
+  }
+  .food-3 {
+    display: flex;
+    width: 70%;
   }
   footer {
     display: flex;
@@ -187,4 +235,4 @@ footer .contain {
     flex-direction: row-reverse;
     gap: 15px;
   }
-}/*# sourceMappingURL=menu1.css.map */
+}/*# sourceMappingURL=menu.css.map */

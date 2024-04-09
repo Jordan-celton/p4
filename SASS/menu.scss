@@ -109,15 +109,14 @@ header {
 .heart-checkbox {
   position: absolute;
   clip: rect(0, 0, 0, 0);
-  pointer-events: none;
 }
 
 /* Au clic sur le label, le cœur vide devient invisible et le cœur plein devient visible */
-.heart-checkbox:checked ~ .card-heart .my-heart-empty {
+.heart-checkbox:checked + .card-heart .my-heart-empty {
   opacity: 0;
 }
 
-.heart-checkbox:checked ~ .card-heart .my-heart-full {
+.heart-checkbox:checked + .card-heart .my-heart-full {
   opacity: 1;
   background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
   color: transparent;
@@ -202,11 +201,41 @@ header {
   cursor: pointer;
 }
 
+
 .food, .food-2, .food-3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  opacity: 0;
+  transform: translateY(-20px) scale(0.9);
 }
+
+.food {
+  animation: appear 0.5s ease forwards;
+}
+
+.food-2 {
+  animation: appear 0.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.food-3 {
+  animation: appear 0.5s ease forwards;
+  animation-delay: 1s; 
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
 
 .btn {
   display: flex;

@@ -202,7 +202,7 @@ header {
   margin: auto;
   width: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   height: 170px;
   border-radius: 20px 20px 0 0;
 }
@@ -235,12 +235,27 @@ header {
   font-size: 25px;
 }
 
-.my-heart-full {
-  opacity: 0;
-  transition: 400ms;
+.my-heart-empty {
+  opacity: 1;
+  transition: opacity 400ms;
 }
 
-.my-heart-full:hover {
+.my-heart-full {
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+.heart-checkbox {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+.heart-checkbox:checked + .card-heart .my-heart-empty {
+  opacity: 0;
+}
+
+.heart-checkbox:checked + .card-heart .my-heart-full {
   opacity: 1;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   color: transparent;

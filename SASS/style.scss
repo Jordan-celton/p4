@@ -207,8 +207,7 @@ header {
   display: block;
   margin: auto;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 170px;
   border-radius: 20px 20px 0 0;
 }
@@ -226,6 +225,7 @@ header {
   flex-direction: column;
 }
 
+
 .card-heart {
   position: absolute;
   bottom: 20px;
@@ -233,23 +233,41 @@ header {
   width: 22px;
   height: 21px;
 }
+
 .card-heart i {
   position: absolute;
   cursor: pointer;
   font-size: 25px;
 }
+
+.my-heart-empty {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
 .my-heart-full {
   opacity: 0;
-  transition: 400ms;
+  transition: opacity 400ms;
 }
-.my-heart-full:hover {
+
+.heart-checkbox {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+
+.heart-checkbox:checked + .card-heart .my-heart-empty {
+  opacity: 0;
+}
+
+.heart-checkbox:checked + .card-heart .my-heart-full {
   opacity: 1;
   background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
   color: transparent;
   background-clip: text; 
-  
-  // permet de défnir la couleur de fond de mon élément
 }
+
 
 .card-new {
   display: flex;

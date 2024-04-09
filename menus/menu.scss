@@ -83,27 +83,47 @@ header {
 }
 
 .card-heart {
+  bottom: 20px;
+  right: 20px;
   width: 22px;
   height: 21px;
+}
 
-  i {
-    position: absolute;
-    cursor: pointer;
-    font-size: 25px;
-  }
+.card-heart i {
+  position: absolute;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.my-heart-empty {
+  opacity: 1;
+  transition: opacity 400ms;
 }
 
 .my-heart-full {
   opacity: 0;
-  transition: 400ms;
-
-  &:hover {
-    opacity: 1;
-    background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
-    color: transparent;
-    background-clip: text;
-  }
+  transition: opacity 400ms;
 }
+
+/* Masquer la case à cocher */
+.heart-checkbox {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+/* Au clic sur le label, le cœur vide devient invisible et le cœur plein devient visible */
+.heart-checkbox:checked ~ .card-heart .my-heart-empty {
+  opacity: 0;
+}
+
+.heart-checkbox:checked ~ .card-heart .my-heart-full {
+  opacity: 1;
+  background: linear-gradient(193.33deg, $primary-color -11.44%, $secondary-color 123.93%);
+  color: transparent;
+  background-clip: text; 
+}
+
 
 .main-contain {
   margin-left: auto;
@@ -237,7 +257,8 @@ footer {
 
   .main-contain {
     display: flex;
-    width: 1055px;
+    margin-left: 150px;
+    margin-right: 150px;
     flex-direction: column;
     align-items: center;
   }

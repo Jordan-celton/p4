@@ -137,12 +137,6 @@ header {
     @include button-style;
   }
 
-.button:hover {
-  opacity: 0.85;
-  box-shadow: 0 15px 25px 0px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(357deg, $primary-color -11.44%, $secondary-color 123.93%);
-}
-
 .fonction-list {
   display: flex;
   flex-direction: column;
